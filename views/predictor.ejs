@@ -1,0 +1,41 @@
+<%- include('partials/header'); %>
+    <div class="row">
+        <h1 style="text-align: center">Price Predictor</h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/predictor" method="post">
+                <div class="form-group">
+                    <input class="form-control" type="number" step="0.1" min="1" max="5" name="starrating" placeholder="Star Rating" required>
+                </div>
+                <div class="form-group">
+                    <span>Swimming Pool :        </span>
+                    <input class="radio-inline" type="radio" name="swimming" value="Yes" checked> Yes
+                    <input class="radio-inline" type="radio" name="swimming" value="No"> No
+                <div>
+                <br>
+                <div class="form-group">
+                    <span>Tourist Destination : </span>
+                    <input class="radio-inline" type="radio" name="tourist" value="Yes" checked> Yes
+                    <input class="radio-inline" type="radio" name="tourist" value="No"> No
+                <div>
+                <br>
+                <div class="form-group">
+                    <span>Holiday  : </span>
+                    <input class="radio-inline" type="radio" name="holiday" value="Yes" checked> Yes
+                    <input class="radio-inline" type="radio" name="holiday" value="No">No
+                <div>
+                <br>
+                <div class="form-group">
+                    <span>Breakfast  : </span>
+                    <input class="radio-inline" type="radio" name="breakfast" value="Yes" checked> Yes
+                    <input class="radio-inline" type="radio" name="breakfast" value="No">No
+                <div>
+                <br>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Predict</button>
+                </div>
+            </form>
+            <a href="/hotels">Go Back</a>
+        </div>
+    </div>
+<%- include('partials/footer'); %>
+

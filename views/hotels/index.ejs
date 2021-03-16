@@ -1,0 +1,39 @@
+<%- include('../partials/header'); %>
+
+     <header class="jumbotron">
+         <div class="container">
+             <h1> Welcome To Hotel Recommender!</h1>
+             <p>View our hand-picked hotels from all over India</p>
+             <p>
+                <a class="btn btn-primary btn-lg" href="/hotels/new">Add New Hotels</a>
+             </p>
+              <p>
+              <form action="/hotels" method="GET" class="form-inline" id="hotel-search">
+                <div class="form-group">
+                  <input type="text" name="search" placeholder="Hotel search..." class="form-control">
+                </div>
+              </form>
+             </p>
+         </div>
+     </header>
+     
+     <div class="row text-center flex-wrap" id="hotel-grid">
+        <% hotels.forEach(function(hotel){ %>
+            <div class="col-md-3 col-sm-6">
+              <div class="boxed">
+                   <img height="173.5" width="260.5" src="<%= hotel.image %>">
+                   <div class="caption">
+                       <a><h4><%= hotel.name %></h4></a>
+                   </div>
+                   <strong>Star Rating : <%= hotel.starrating %> </strong><span class="fa fa-star checked"></span>
+                   <br>
+                   <strong>User Rating : <%= hotel.userrating %> <span class="fa fa-star checked"></span></strong>
+                   <p>
+                       <a href="/hotels/<%= hotel._id %>" class="btn btn-primary">More Info</a>
+                   </p>
+                </div>
+            </div>
+        <% }); %>
+    </div>
+
+<%- include('../partials/footer'); %>

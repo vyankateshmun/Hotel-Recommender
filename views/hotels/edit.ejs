@@ -1,0 +1,38 @@
+<%- include('../partials/header'); %>
+    <div class="row">
+        <h1 style="text-align: center">Edit <%= hotel.name %></h1>
+        <div style="width: 30%; margin: 25px auto;">
+            <form action="/hotels/<%=hotel._id%>?_method=PUT" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input class="form-control" type="text" name="name" id="name" value="<%= hotel.name %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="starrating">Star Rating</label>
+                    <input class="form-control" type="number" step="0.1" min="1" max="5" name="starrating" id="starrating" value="<%= hotel.starrating %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="image">Image Url</label>
+                    <input class="form-control" type="text" name="image" id="image" placeholder="https://images.unsplash.com/..." value="<%= hotel.image %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="cost">Cost</label>
+                    <input class="form-control" type="number" name="cost" id="cost" value="<%= hotel.cost %>" step="0.01" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="location">Location</label>
+                    <input class="form-control" type="text" name="location" id="location" value="<%= hotel.location %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">Description</label>
+                    <input class="form-control" type="text" name="description" id="description" value="<%= hotel.description %>" required>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-lg btn-primary btn-block">Update!</button>
+                </div>
+            </form>
+            <a href="/hotels">Go Back</a>
+        </div>
+    </div>
+<%- include('../partials/footer'); %>
+
